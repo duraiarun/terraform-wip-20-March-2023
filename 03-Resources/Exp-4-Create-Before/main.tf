@@ -4,7 +4,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "front" { 
   count = 1
-  name = "frontend-${count.index}"
+  name = "Backend-${count.index}"
   location = "eastus"
 
   tags = { 
@@ -19,9 +19,10 @@ resource "azurerm_resource_group" "front" {
 
 }
 
+
 resource "azurerm_resource_group" "back" { 
   count = 1
-  name = "backend-RG-${count.index}"
+  name = "Mango-RG-${count.index}"
   location = "eastus"
   tags = { 
    Project = "DevOps"
