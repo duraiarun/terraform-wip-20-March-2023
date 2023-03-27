@@ -2,7 +2,6 @@ resource "azurerm_virtual_machine" "front" {
   count 	      = var.my_vm_count
   name                  = "${var.my_rg_name}-vm-front-${count.index}"
   location              = azurerm_resource_group.example.location
-  #location              = var.my_vm_loc[count.index]
   resource_group_name   = azurerm_resource_group.example.name
   network_interface_ids = [element(azurerm_network_interface.front.*.id, count.index)]
   vm_size               = var.vm_size
@@ -47,7 +46,6 @@ resource "azurerm_virtual_machine" "back" {
   count 	      = var.my_vm_count
   name                  = "${var.my_rg_name}-vm-back-${count.index}"
   location              = azurerm_resource_group.example.location
-  #location              = var.my_vm_loc[count.index]
   resource_group_name   = azurerm_resource_group.example.name
   network_interface_ids = [element(azurerm_network_interface.back.*.id, count.index)]
   vm_size               = var.vm_size
