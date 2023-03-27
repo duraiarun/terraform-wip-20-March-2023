@@ -14,7 +14,7 @@ locals {
 
 
 resource "azurerm_resource_group" "blue" {
-  name     = "${var.mytest}-blue"
+  name     = "${local.default_name}-blue"
   location = var.my_loc
   tags = local.project_tags
 }
