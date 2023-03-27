@@ -1,8 +1,4 @@
 variable "my_loc" { default = "eastus" }
-variable "my_vm_loc" {
- default = [ "eastus" , "westus" ]
-
-}
 variable "my_vm_count" { default = 2 }
 variable "my_rg_name" { default = "TestRG" }
 variable "admin_username" {
